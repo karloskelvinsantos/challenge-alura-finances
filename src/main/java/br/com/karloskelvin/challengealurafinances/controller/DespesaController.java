@@ -2,6 +2,7 @@ package br.com.karloskelvin.challengealurafinances.controller;
 
 import br.com.karloskelvin.challengealurafinances.model.Transaction;
 import br.com.karloskelvin.challengealurafinances.model.TransactionType;
+import br.com.karloskelvin.challengealurafinances.service.DespesaService;
 import br.com.karloskelvin.challengealurafinances.service.TransactionService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,10 +17,10 @@ import java.util.List;
 @AllArgsConstructor
 public class DespesaController {
 
-    private TransactionService service;
+    private DespesaService service;
 
     @GetMapping
     public ResponseEntity<List<Transaction>> getAllDespesas() {
-        return ResponseEntity.ok(this.service.getAllTransactions(TransactionType.EXPENSE));
+        return ResponseEntity.ok(this.service.getAllDespesas());
     }
 }
