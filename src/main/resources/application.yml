@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://mongo:mongo@mongodb.sfmro.mongodb.net/finances-db?retryWrites=true&w=majority
+      database: finances-db
