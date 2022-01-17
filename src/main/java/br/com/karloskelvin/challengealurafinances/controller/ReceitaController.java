@@ -25,4 +25,15 @@ public class ReceitaController {
     public ResponseEntity<List<Transaction>> getAll() {
         return ResponseEntity.ok(this.service.getAllReceitas());
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Transaction> getOne(@PathVariable String id) {
+        return ResponseEntity.ok(this.service.getReceitaById(id));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable String id) {
+        this.service.delete(id);
+        return ResponseEntity.ok().build();
+    }
 }
